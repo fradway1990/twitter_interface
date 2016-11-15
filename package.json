@@ -1,0 +1,16 @@
+{
+  "name": "twitter_interface",
+  "version": "1.0.0",
+  "description": "A twitter interface built with the express framework on top of node.js",
+  "main": "src/app.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frank Collins",
+  "license": "ISC"
+}
