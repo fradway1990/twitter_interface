@@ -1,159 +1,16 @@
 doctype html
 html(lang='en')
-	head
-		title Twitter Interface
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', type='text/css')
-		link(rel='stylesheet',  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css')
-		link(rel='stylesheet', href='css/style.css', type='text/css')
-		script(src='https://code.jquery.com/jquery-2.2.4.min.js',  integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=', crossorigin='anonymous')
-		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-		script(src='js/jQuery-slimScroll-1.3.8/jquery.slimscroll.min.js')
+	include ./partials/_head.jade
+	
 	body
-		nav
-			div(class='container-fluid')
-				div(class='row')
-					div(class='logo col-xs-8 col-sm-8 col-md-8 col-lg-8')
-						i(class="fa fa-twitter-square", aria-hidden="true")
-						|Interface
-					div(class='nav-links col-xs-4 col-sm-4 col-md-4 col-lg-4')
-						a(href='#')
-							i(class="fa fa-sign-out", aria-hidden="true")
+		include ./partials/_nav.jade
 		
 		div(class='container-fluid content-container')
 			div(class='row')
-				div(id='profile-info', class='col-xs-12 col-sm-12 col-md-12 col-lg-12')
-					div(class='col-xs-12 col-sm-12 col-md-12 col-lg-12')
-						div(class='img-container')
-					div(class='profile-name col-xs-12 col-sm-12 col-md-12 col-lg-12')
-						|@twitterUser
-				
-				div(class='activity-col col-xs-12 col-sm-12 col-md-4 col-lg-4')
-					div(class='activity-label')
-						h2 Tweets
-						i(class="fa fa-caret-down", aria-hidden="true")
-					
-					div(class='activity-container')
-						ul(class='tweets')
-							li
-								div(class='tweet-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily DeCarlos DeAngelos
-								p
-									| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-							
-							li
-								div(class='tweet-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily DeCarlos DeAngelos
-								p
-									| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-							
-							li
-								div(class='tweet-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily DeCarlos DeAngelos
-								p
-									| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-									
-							li
-								div(class='tweet-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily DeCarlos DeAngelos
-								p
-									| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-									
-							li
-								div(class='tweet-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily DeCarlos DeAngelos
-								p
-									| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-				
-				div(class='activity-col col-xs-12 col-sm-12 col-md-4 col-lg-4')
-					div(class='activity-label')
-						h2 Following
-						i(class="fa fa-caret-down" aria-hidden="true")
-					div(class='activity-container')
-						ul(class='following')
-							li
-								div(class='following-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily Decarlos DeAngelos
-								button(class='follow-button', type='button')
-									| Unfollow
-							
-							li
-								div(class='following-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily Decarlos DeAngelos
-								button(class='follow-button', type='button')
-									| Unfollow
-							
-							li
-								div(class='following-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily Decarlos DeAngelos
-								button(class='follow-button', type='button')
-									| Unfollow
-							
-							li
-								div(class='following-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily Decarlos DeAngelos
-								button(class='follow-button', type='button')
-									| Unfollow
-							
-							li
-								div(class='following-info')
-									div(class='img-container')
-									div(class='un') @twitterUser
-										br
-										span(class='rn') Emily Decarlos DeAngelos
-								button(class='follow-button', type='button')
-									| Unfollow
-							
-							
-				div(class='activity-col col-xs-12 col-sm-12 col-md-4 col-lg-4')
-					div(class='activity-label')
-						h2 Messages
-						i(class="fa fa-caret-down" aria-hidden="true")
-					
-					div(class='activity-container')
-						ul(class='messages')
-							li(class='message-me')
-								div(class='img-container')
-								div(class='message-container')
-									div(class='message')
-										| Hello Darkness my old friend. It's nice to see you again.
-									div(class='timestamp')
-										|3 hours ago
-							
-							li(class='message-other')
-								div(class='img-container')
-								div(class='message-container')
-									div(class='message')
-										| Hello Darkness my old friend. It's nice to see you again.
-									div(style='clear:both')
-									div(class='timestamp')
-										|3 hours ago
+				include ./partials/_profile_info.jade
+				include ./partials/_tweets.jade
+				include ./partials/_following.jade
+				include ./partials/_messages.jade
 		
 		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 		script(src='js/script.js')
