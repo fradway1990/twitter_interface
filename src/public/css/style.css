@@ -1,9 +1,267 @@
 body{
 	min-width:300px;
+	font-size:12pt;
+	font-family:Arial,Helvetica,san-serif;
 }
-
+a{
+	color:black;
+}
+a:hover{
+	text-decoration:none;
+}
+a:active{
+	text-decoration:none;
+}
+a:focus{
+	text-decoration:none;
+}
 @media(min-width : 0){
 	html{
-		background-color:red;
+		background-color:white;
+	}
+	nav{
+		padding-top:1em;
+		padding-bottom:1em;
+	}
+	.logo{
+		float:left;
+		font-weight:bold;
+		font-size:1.4em;
+		vertical-align:top;
+	}
+	
+	.img-container{
+		border:10px solid white;
+		width:90px;
+		height:90px;
+		border-radius:100%;
+		overflow:hidden;
+		background-image:url('../img/girl.jpg');
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size:cover;
+		box-shadow:3px 3px 10px rgba(20,20,20,.3);
+	}
+	#profile-info>div>.img-container{
+		width:170px;
+		height:170px;
+		background-image:url('../img/girl.jpg');
+		margin:0 auto;
+	}
+	.nav-links{
+		float:right;
+		text-align:right;
+		vertical-align:top;
+		font-size:1.2em;
+	}
+	#profile-info{
+		margin-bottom:1.3em;
+	}
+
+	.profile-name{
+		text-align:center;
+		margin-top:10px;
+		font-weight:bold;
+	}
+	.activity-col{
+		margin-bottom:20px;
+	}
+	.activity-container{
+		width:100%;
+		overflow-y:hidden;
+		overflow-x:hidden;
+		padding-top:20px;
+		padding-bottom:20px;
+		display:none;
+	}
+	.activity-label{
+		background-color:#e5e7ea;
+		width:100%;
+		padding:5px 10px 5px 10px;
+	}
+	.activity-label:hover{
+		cursor:pointer;
+	}
+	.activity-label i{
+		display:inline-block;
+		float:right;
+		margin-top:5px;
+	}
+	.activity-label h2{
+		margin:0;
+		display:inline-block;
+	}
+	.tweets,.following,.messages{
+		width:100%;
+		margin-left:0;
+		padding:0;
+	}
+	.tweets li,.following li{
+		box-shadow:3px 3px 10px rgba(20,20,20,.3);
+		margin-bottom:10px;
+		padding:15px;
+		border:1px solid #e8eaea;
+		box-sizing:border-box;
+		overflow:auto;
+	}
+	.messages li{
+		padding:15px;
+		width:100%;
+		box-sizing:border-box;
+		overflow:auto;
+	}
+	.tweets li:last-child,.following li:last-child{
+		margin-bottom:0;
+	}
+	.tweets li .tweet-info, .following li .following-info{
+		display:inline-block;
+		margin-bottom:4px;
+		position:relative;
+		
+	}
+	.tweets li .tweet-info>.img-container, .following li .following-info>.img-container{
+		display:inline-block;
+		border:4px solid white;
+		height:50px;
+		width:50px;
+		vertical-align:top;
+		margin-right: 10px;
+		
+	}
+	.tweets li .tweet-info .un,.following li .following-info .un{
+		font-weight:bold;
+		display:inline-block;
+		vertical-align:top;
+		position:relative;
+		top:7px;
+		margin-bottom:5px;
+	}
+	.tweets li>p{
+		display:block;
+	}
+	.rn{
+		font-weight:normal;
+		font-size:10pt;
+		color:gray;
+	}
+	.follow-button{
+		background-color:inherit;
+		border:3px solid #00aced;
+		color:#00aced;
+		font-weight:bold;
+		padding:6px;
+		border-radius:5px;
+		top:7px;
+		position:relative;
+		display:block;
+	}
+
+	.messages .message-me .img-container{
+		display:inline-block;
+		border:4px solid white;
+		width:50px;
+		height:50px;
+		float:left;
+		margin-right:10px;
+	}
+	.messages .message-other .img-container{
+		display:inline-block;
+		border:4px solid white;
+		width:50px;
+		height:50px;
+		float:right;
+		margin-left:10px;
+	}
+	.message-container{
+		min-width:30px;
+		overflow:hidden;
+		color:white;
+		position:relative;
+	}
+	.message-me .message-container .message{
+		border-radius:15px;
+		padding:10px;
+		position:relative;
+		background-color:#00aced;
+		display:inline-block;
+		left:20px;
+		margin-bottom:10px;
+		box-sizing:border-box;
+		max-width:90%;
+		
+	}
+
+	.message-other .message-container .message{
+		border-radius:15px;
+		padding:10px;
+		position:relative;
+		background-color:#a86cc6;
+		display:inline-block;
+		left:30px;
+		float:right;
+		margin-right:50px;
+		margin-bottom:10px;
+		box-sizing:border-box;
+		max-width:90%;
+		
+	}
+	.message-me .message-container .message:after{
+		content:'';
+		background:#00aced url('../img/tail_left.svg') no-repeat;
+		background-size:cover;
+		position:absolute;
+		height:20px;
+		width:20px;
+		left:-20px;
+		top:10px;
+	}
+	.message-other .message-container .message:after{
+		content:'';
+		background:#a86cc6 url('../img/tail_left.svg') no-repeat;
+		background-size:cover;
+		position:absolute;
+		height:20px;
+		width:20px;
+		right:-20px;
+		top:10px;
+		-moz-transform: scaleX(-1);
+		-o-transform: scaleX(-1);
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+		filter: FlipH;
+		-ms-filter: "FlipH";
+	
+	}
+	.message-me .timestamp{
+		color:gray;
+		margin-left:20px;
+	}
+	
+	.message-other .timestamp{
+		color:gray;
+		text-align:right;
+		margin-right:20px;
+	}
+	.slimScrollDiv{
+		display:none;
+	}
+	
+	.option{
+		background-color:#e8eaea;
+		padding:4px;
+		font-size:10pt;
+		margin-right:3px;
+		text-align:center;
+	}
+	.option:hover{
+		color:#a86cc6;
+		cursor:pointer;
+	}
+}
+
+@media(min-width:768px){
+	.follow-button{
+		float:right;
+		display:inline-block;
 	}
 }
