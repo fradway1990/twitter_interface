@@ -5,49 +5,15 @@ div(class='activity-col col-xs-12 col-sm-12 col-md-4 col-lg-4')
 					
 	div(class='activity-container')
 		ul(class='tweets')
+			-for(var i = 0; i < tweets.length ; i++){
 			li
 				div(class='tweet-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
+					div(class='img-container', style='background-image:url(#{tweets[i].user.avatar});')
+					div(class='un') &#64;#{tweets[i].user.screenName}
 						br
-						span(class='rn') Emily DeCarlos DeAngelos
+						span(class='rn') #{tweets[i].user.realName}
 				p
-					| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-			
-			li
-				div(class='tweet-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily DeCarlos DeAngelos
-				p
-					| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-					
-			li
-				div(class='tweet-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily DeCarlos DeAngelos
-				p
-					| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-					
-					
-			li
-				div(class='tweet-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily DeCarlos DeAngelos
-				p
-					| Kombucha tacos edison bulb, listicle XOXO before they sold out.
-					
-					
-			li
-				div(class='tweet-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily DeCarlos DeAngelos
-				p
-					| Kombucha tacos edison bulb, listicle XOXO before they sold out.
+					| #{tweets[i].text}
+				div(class='timestamp')
+					| #{tweets[i].timestamp}
+			-}

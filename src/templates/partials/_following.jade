@@ -4,47 +4,15 @@ div(class='activity-col col-xs-12 col-sm-12 col-md-4 col-lg-4')
 		i(class="fa fa-caret-down" aria-hidden="true")
 	div(class='activity-container')
 		ul(class='following')
+			-for(var i=0; i < friends.length;i++){
 			li
 				div(class='following-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
+					div(class='img-container',style='background-image:url(#{friends[i].avatar});')
+					div(class='un')
+						| &#64;#{friends[i].screenName}
 						br
-						span(class='rn') Emily Decarlos DeAngelos
+						span(class='rn') #{friends[i].realName}
 				button(class='follow-button', type='button')
 					| Unfollow
 			
-			li
-				div(class='following-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily Decarlos DeAngelos
-				button(class='follow-button', type='button')
-					| Unfollow
-			
-			li
-				div(class='following-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily Decarlos DeAngelos
-				button(class='follow-button', type='button')
-					| Unfollow
-					
-			li
-				div(class='following-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily Decarlos DeAngelos
-				button(class='follow-button', type='button')
-					| Unfollow
-					
-			li
-				div(class='following-info')
-					div(class='img-container')
-					div(class='un') @twitterUser
-						br
-						span(class='rn') Emily Decarlos DeAngelos
-				button(class='follow-button', type='button')
-					| Unfollow
+			-}

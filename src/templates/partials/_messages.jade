@@ -5,19 +5,14 @@ div(class='activity-col col-xs-12 col-sm-12 col-md-4 col-lg-4')
 					
 	div(class='activity-container')
 		ul(class='messages')
-			li(class='message-me')
-				div(class='img-container')
+			-for(var i = 0; i < messages.length;i++){
+			-var sender = (messages[i].sender.id === user.id)? 'message-me' : 'message-other'
+			li(class= sender)
+				div(class='img-container',style='background-image:url(#{messages[i].sender.avatar})')
 				div(class='message-container')
 					div(class='message')
-						| Hello Darkness my old friend. It's nice to see you again.
-					div(class='timestamp')
-						|3 hours ago
-							
-			li(class='message-other')
-				div(class='img-container')
-				div(class='message-container')
-					div(class='message')
-						| Hello Darkness my old friend. It's nice to see you again.
+						| #{messages[i].text}
 					div(style='clear:both')
 					div(class='timestamp')
-						|3 hours ago
+						|sent to #{messages[i].recipient.name} at #{messages[i].timestamp}
+			-}

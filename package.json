@@ -5,7 +5,9 @@
   "main": "src/app.js",
   "dependencies": {
     "express": "^4.14.0",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "oauth": "^0.9.14",
+    "twitter": "^1.4.0"
   },
   "devDependencies": {},
   "scripts": {

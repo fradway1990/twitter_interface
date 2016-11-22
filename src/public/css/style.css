@@ -36,7 +36,7 @@ a:focus{
 		height:90px;
 		border-radius:100%;
 		overflow:hidden;
-		background-image:url('../img/girl.jpg');
+		/*background-image:url('../img/girl.jpg');*/
 		background-position:center;
 		background-repeat:no-repeat;
 		background-size:cover;
@@ -45,7 +45,7 @@ a:focus{
 	#profile-info>div>.img-container{
 		width:170px;
 		height:170px;
-		background-image:url('../img/girl.jpg');
+		/*background-image:url('../img/girl.jpg');*/
 		margin:0 auto;
 	}
 	.nav-links{
@@ -232,13 +232,16 @@ a:focus{
 		-ms-filter: "FlipH";
 	
 	}
-	.message-me .timestamp{
+	.timestamp{
 		color:gray;
+		font-size:10pt;
+	}
+	.message-me .timestamp{
+		
 		margin-left:20px;
 	}
 	
 	.message-other .timestamp{
-		color:gray;
 		text-align:right;
 		margin-right:20px;
 	}
